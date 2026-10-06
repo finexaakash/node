@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+</head>
+<body>
+    <h1> this is my server</h1>
+    <!-- <form method ="POST" action="/urls">
+        <label>enter your url to genrate</label>
+        <input type="text" name="url" placeholder="https://name.com"/>
+        <button type="submit">genrate</button>
+    </form> -->
+    <form method="POST" action="/urls">
+    <label>enter your url to genrate</label>
+    <input type="text" name="url" placeholder="https://name.com"/>
+    <button type="submit">genrate</button>
+</form>
+<% if (locals.id) { %>
+    <h2>Generated URL:</h2>
+    <a href="/<%= id %>">
+        http://localhost:8000/<%= id %>
+    </a>
+<% } %>
+<% if (locals.urls) { %>
+    <table>
+        <thead>
+            <th>sr</th>
+            <th>shorid</th>
+            <th>uurl</th>
+            <th>visit</th>
+        </thead>
+        <tdata>
+            <% urls.forEach((url,index) => { %>
+                <tr>
+             <td><%= index+1 %></td>
+             <td><%= url.shorturl %></td>
+             <td><%= url.redirector %></td>
+             <td><%= url.visit.length %></td>
+             </tr>
+            <% }) %>
+            
+        </tdata>
+    </table>
+<% } %>
+</body>
+</html>

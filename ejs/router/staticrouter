@@ -1,0 +1,14 @@
+
+const express = require("express")
+const model = require("../model/user")
+const path = require("path")
+const URL = require("../model/user")
+
+const router = express.Router();
+const  alluser = URL.find({});
+router.get('/',async(req,res)=>{
+    const urls =await  model.find({});
+
+    return res.render ('home',{urls : urls});
+})
+module.exports = router;
