@@ -6,4 +6,4 @@ const mongoose = require("mongoose")
    return   mongoose.connect(url);
 }
 
-module.exports = connects
+module.exports = connect
